@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG Transportes - Soluções Inteligentes em Logística</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#1e3a8a',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(30, 64, 175, 0.8), rgba(30, 64, 175, 0.8)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .logo {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+        .floating-btn {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/lgtranportes/img/deslgtras.jpg" alt="LG Transportes" class="h-10 mr-2">
+                <span class="text-xl font-bold text-primary">LG Transportes</span>
+            </div>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#empresa" class="text-gray-700 hover:text-primary font-medium transition">Empresa</a></li>
+                    <li><a href="#servicos" class="text-gray-700 hover:text-primary font-medium transition">Serviços</a></li>
+                    <li><a href="#contato" class="text-gray-700 hover:text-primary font-medium transition">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <button class="md:hidden text-gray-700" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden bg-white w-full py-2 px-4 shadow-md" id="mobile-menu">
+            <ul class="flex flex-col space-y-3">
+                <li><a href="#empresa" class="block py-2 text-gray-700 hover:text-primary">Empresa</a></li>
+                <li><a href="#servicos" class="block py-2 text-gray-700 hover:text-primary">Serviços</a></li>
+                <li><a href="#contato" class="block py-2 text-gray-700 hover:text-primary">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-white mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Soluções Inteligentes em Logística</h1>
+                <p class="text-xl mb-8">Transporte seguro e eficiente para suas cargas em todo o Piauí e Nordeste.</p>
+                <a href="#contato" class="bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 inline-block">Solicitar Cotação</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="/lgtranportes/img/deslgtras.jpg" alt="Caminhão LG Transportes" class="logo max-w-md w-full rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Empresa Section -->
+    <section id="empresa" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Sobre a Empresa</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-primary mb-6">Nossa História</h3>
+                    <p class="text-gray-700 mb-6">A LG Transportes é uma empresa especializada em transporte rodoviário de cargas, fundada em 2024 com o objetivo de oferecer soluções logísticas eficientes e personalizadas para nossos clientes.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-primary mb-2">Missão</h4>
+                            <p class="text-gray-700">Oferecer transporte seguro e eficiente, superando as expectativas dos clientes.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-primary mb-2">Visão</h4>
+                            <p class="text-gray-700">Ser referência em logística no Nordeste até 2030.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-primary mb-6">Dados Empresariais</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-file-alt text-primary mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">Razão Social:</span> L G de Sousa Transportes LTDA
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-id-card text-primary mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">CNPJ:</span> 58.429.300/0001-70
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-calendar-alt text-primary mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">Abertura:</span> 11/12/2024
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-building text-primary mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">Porte:</span> Microempresa, Simples Nacional
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-tie text-primary mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">Sócio:</span> Luiz Gonzaga de Sousa
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">Endereço:</span> Rua Dr. Luis Paixão, SN – Milonga – São Raimundo Nonato/PI
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-truck text-primary mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">CNAEs:</span> Transporte rodoviário de carga e mudanças
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Nossos Serviços</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Cargas Urbanas/Intermunicipais</h3>
+                    <p class="text-gray-700">Transporte seguro de cargas entre cidades da região Nordestina, com equipe especializada e cuidadosa unindo rapidez e segurança.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Transporte de Mudanças</h3>
+                    <p class="text-gray-700">Serviço completo de mudanças residenciais e comerciais, com equipe especializada e cuidadosa.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Soluções Logísticas Personalizadas</h3>
+                    <p class="text-gray-700">Desenvolvemos a melhor solução para sua necessidade específica de transporte e logística.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-primary text-white p-8 rounded-lg shadow-md">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold mb-3">Precisa de um serviço especial?</h3>
+                        <p>Entre em contato para discutirmos sua necessidade específica.</p>
+                    </div>
+                    <div class="md:w-1/3 text-center">
+                        <a href="#contato" class="bg-white text-primary font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 inline-block">Fale Conosco</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Entre em Contato</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-primary mb-6">Informações de Contato</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                        <a href="https://wa.me/5589999255289" target="_blank" class="block bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg p-4 shadow-lg transition duration-200">
+  <div class="flex items-center space-x-4">
+    <!-- Ícone WhatsApp -->
+    <svg class="w-7 h-7 text-white" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.003 3.2c-7.067 0-12.8 5.733-12.8 12.8 0 2.255.595 4.46 1.719 6.394L3.2 28.8l6.563-1.71c1.882 1.027 4.01 1.566 6.24 1.566h.001c7.067 0 12.8-5.733 12.8-12.8s-5.733-12.8-12.8-12.8zm0 23.467c-1.885 0-3.723-.492-5.344-1.422l-.384-.222-3.896 1.017 1.044-3.8-.25-.393c-1.095-1.722-1.673-3.719-1.673-5.762 0-5.922 4.813-10.734 10.734-10.734S26.737 9.545 26.737 15.467 21.924 26.667 16.003 26.667z"/>
+      <path d="M22.53 19.94l-2.182-.623a.934.934 0 0 0-.897.243l-.676.689a10.036 10.036 0 0 1-4.524-4.524l.689-.676a.933.933 0 0 0 .243-.897l-.623-2.182a.94.94 0 0 0-.88-.672h-.7c-.487 0-.94.195-1.28.535a2.733 2.733 0 0 0-.805 2.2c.029.296.098.585.205.859 1.1 2.781 3.243 5.106 5.955 6.415a2.86 2.86 0 0 0 1.125.29h.014c.748 0 1.49-.27 2.065-.804.34-.34.535-.793.535-1.28v-.7a.94.94 0 0 0-.672-.88z"/>
+    </svg>
+
+    <!-- Texto ao lado do ícone -->
+    <div>
+      <h4 class="text-lg font-semibold">Telefone / WhatsApp</h4>
+      <p>(89) 99925-5289</p>
+    </div>
+  </div>
+</a>
+
+</a>
+
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">E-mail</h4>
+                                <p class="text-gray-700">carlosbaldoinosrn@hotmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Endereço</h4>
+                                <p class="text-gray-700">Rua Dr. Luis Paixão, SN – Milonga – São Raimundo Nonato/PI</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary text-xl mr-4 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Horário de Atendimento</h4>
+                                <p class="text-gray-700">Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-primary mb-6">Localização</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.324292730423!2d-42.699072!3d-9.012803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnNDYuMSJTIDQywrDQxJzU2LjciVw!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- #### formulario de contato ####
+                <div class="mt-12 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-primary mb-6">Solicite uma Cotação</h3>
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nome" class="block text-gray-700 font-medium mb-2">Nome</label>
+                        <input type="text" id="nome" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="telefone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                        <input type="tel" id="telefone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="servico" class="block text-gray-700 font-medium mb-2">Serviço de Interesse</label>
+                        <select id="servico" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Selecione...</option>
+                            <option value="cargas">Cargas Urbanas/Intermunicipais</option>
+                            <option value="mudancas">Transporte de Mudanças</option>
+                            <option value="personalizado">Solução Logística Personalizada</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="mensagem" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                        <textarea id="mensagem" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-secondary transition duration-300">Enviar Solicitação</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5589981267779" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg floating-btn z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/40x40?text=LG" alt="LG Transportes" class="h-8 mr-2">
+                        <span class="text-xl font-bold">LG Transportes</span>
+                    </div>
+                    <p class="mt-2 text-sm">Soluções Inteligentes em Logística</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-blue-200 transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-200 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/5589981267779" target="_blank" class="hover:text-blue-200 transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-700 mt-8 pt-6 text-sm">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2024 LG Transportes. Todos os direitos reservados.</p>
+                    <div class="mt-4 md:mt-0">
+                        <a href="#" class="hover:text-blue-200 transition">Política de Privacidade</a>
+                        <span class="mx-2">|</span>
+                        <a href="#" class="hover:text-blue-200 transition">Termos de Serviço</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
